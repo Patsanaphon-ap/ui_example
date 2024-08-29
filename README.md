@@ -1,30 +1,64 @@
-# presentation
+# ui_example
 
-A new Flutter project.
+project create for sample transfer money and show daily convert exchange rate
 
-## Getting Started
+## Table of Contents
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Image Screen](#Image-Screen)
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
 
-## Assets
+To set up the project locally, follow these steps:
 
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
+1. clone project
+```bash
+   git clone https://github.com/Patsanaphon.ap/ui_money.git
+   cd ui_money
+```
+2.Install Flutter and Dart: Make sure you have Flutter and Dart installed on your machine.
+3.install dependencies
+```bash
+flutter pub get
+```
 
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
+## Running the project
 
-## Localization
+```bash
+flutter run
+```
 
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
+## Features
+- Sample transfer money user to user.
+- Sample history trasnfer
+- Sample convint exchange rate
 
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+## Project Structure
+```
+ui_example/
+│── ios/                           # IOS file for flutter
+│── android/                       # Android file for flutter
+│── lib/                  
+│   ├── main.dart                  # Entry point of the Flutter application
+│   ├── mock/                      # Mock data or api
+│   └── src/               
+│         ├── config/              # config data (RoutePath or RoutePage)
+│         ├── controller/          # State management(`controller` or `binding`)
+│         ├── data/                # API call (`dio` and `model`)
+│         ├── ui/                  # All the screen widgets
+│         ├── util/                # Utility function
+│         ├── app.dart             # Flutter application material
+│         ├── environment.dart     # file environment for `flavor`
+│         └── injector.dart        # API injector
+│── assets/                        # Images, fonts, and other assets
+│── pubspec.yaml                   # Project dependencies and configuration
+└── README.md                      # Project documentation
+```
+
+
+
+
+

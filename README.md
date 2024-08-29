@@ -16,7 +16,7 @@ To set up the project locally, follow these steps:
 
 1. clone project
 ```bash
-   git clone https://github.com/Patsanaphon.ap/ui_money.git
+   git clone https://github.com/Patsanaphon-ap/ui_money.git
    cd ui_money
 ```
 2.Install Flutter and Dart: Make sure you have Flutter and Dart installed on your machine.

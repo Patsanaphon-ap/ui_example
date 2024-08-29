@@ -11,10 +11,14 @@ class DiscountWidget extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            margin: const EdgeInsets.only(bottom: 12,left: 8,right: 8),
+            margin: const EdgeInsets.only(bottom: 12, left: 8, right: 8),
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             decoration: BoxDecoration(
-              image: const DecorationImage(
+              image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.3), // Darkens the image
+                  BlendMode.darken,
+                ),
                 image: AssetImage(
                   "assets/images/mocks/bg_bird.jpg",
                 ),
@@ -29,14 +33,17 @@ class DiscountWidget extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    text32BoldWhite(
+                    text18Bold(
                       'Discounts',
+                    ),
+                    text32BoldWhite(
+                      '80% OFF',
                     ),
                     const SizedBox(
                       height: 12,
                     ),
                     const MyButton(
-                      title: 'See More',
+                      title: 'Check this out',
                     ),
                   ],
                 ),

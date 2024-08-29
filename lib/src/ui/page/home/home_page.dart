@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:presentation/src/ui/page/home/widget/discount_widget.dart';
-import 'package:presentation/src/ui/page/home/widget/flash_sales_widget.dart';
+import 'package:presentation/src/ui/page/home/flash_sales_widget.dart';
 import 'package:presentation/src/ui/page/home/widget/location_widget.dart';
 import 'package:presentation/src/ui/widget/my_appbar.dart';
 import 'package:presentation/src/ui/widget/my_page.dart';
@@ -29,7 +29,9 @@ class HomePage extends StatelessWidget {
                 const LocationWidget(),
                 // const MenuWidget(),
                 const DiscountWidget(),
+
                 FlashSalesWidget(),
+                SizedBox(height: MediaQuery.of(context).padding.bottom + 40),
               ],
             ),
           ],

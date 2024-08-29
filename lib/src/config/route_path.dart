@@ -7,4 +7,5 @@ class RoutePath {
   static const home = '/home';
   static const history = '/history';
   static const profile = '/profile';
+  static const productdetail = '/product/detail';
 }

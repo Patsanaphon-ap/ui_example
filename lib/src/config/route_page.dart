@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:presentation/src/ui/page/home/home_page.dart';
+import 'package:presentation/src/ui/page/pdp/product_detail_page.dart';
 import 'package:presentation/src/ui/widget/my_bottom_nav.dart';
 
 import 'route_path.dart';
@@ -20,6 +21,10 @@ class RoutePages {
     GetPage(
       name: RoutePath.bottomnav,
       page: () => const BottomNavBar(),
+    ),
+    GetPage(
+      name: RoutePath.productdetail,
+      page: () => ProductDetailPage(),
     ),
   ];
 }

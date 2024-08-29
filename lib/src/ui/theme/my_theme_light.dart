@@ -5,8 +5,10 @@ ThemeData get lightTheme => ThemeData(
       brightness: Brightness.light,
       useMaterial3: true,
       fontFamily: 'Roboto',
-      primaryColor: Colors.lightBlue,
-      primaryColorLight: Colors.lightBlue.shade200,
+      primaryColor: Colors.blueAccent,
+      primaryColorLight: Colors.blueGrey.shade50,
+      primaryColorDark: Colors.black,
+      scaffoldBackgroundColor: Color.fromARGB(255, 244, 248, 255),
       indicatorColor: Colors.black12,
       dividerColor: Colors.grey,
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -15,8 +17,9 @@ ThemeData get lightTheme => ThemeData(
           backgroundColor: Colors.black,
         ),
       ),
-      appBarTheme:
-          const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.dark),
+      appBarTheme: const AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
+          backgroundColor: Color.fromARGB(255, 244, 248, 255)),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.black,

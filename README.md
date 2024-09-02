@@ -1,12 +1,11 @@
 # ui_example
 
-project create for sample transfer money and show daily convert exchange rate
+This project create for sample of UI e-commerce
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Running the Project](#running-the-project)
-- [Features](#features)
 - [Project Structure](#project-structure)
 - [Image Screen](#Image-Screen)
 
@@ -33,12 +32,6 @@ flutter pub get
 ```bash
 flutter run
 ```
-
-## Features
-
-- Sample transfer money user to user.
-- Sample history trasnfer
-- Sample convint exchange rate
 
 ## Project Structure
 

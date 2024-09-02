@@ -15,12 +15,15 @@ project create for sample transfer money and show daily convert exchange rate
 To set up the project locally, follow these steps:
 
 1. clone project
+
 ```bash
-   git clone https://github.com/Patsanaphon-ap/ui_money.git
-   cd ui_money
+   git clone https://github.com/Patsanaphon-ap/ui_example.git
+   cd ui_example
 ```
+
 2.Install Flutter and Dart: Make sure you have Flutter and Dart installed on your machine.
 3.install dependencies
+
 ```bash
 flutter pub get
 ```
@@ -32,19 +35,21 @@ flutter run
 ```
 
 ## Features
+
 - Sample transfer money user to user.
 - Sample history trasnfer
 - Sample convint exchange rate
 
 ## Project Structure
+
 ```
 ui_example/
 │── ios/                           # IOS file for flutter
 │── android/                       # Android file for flutter
-│── lib/                  
+│── lib/
 │   ├── main.dart                  # Entry point of the Flutter application
 │   ├── mock/                      # Mock data or api
-│   └── src/               
+│   └── src/
 │         ├── config/              # config data (RoutePath or RoutePage)
 │         ├── controller/          # State management(`controller` or `binding`)
 │         ├── data/                # API call (`dio` and `model`)
@@ -58,7 +63,9 @@ ui_example/
 └── README.md                      # Project documentation
 ```
 
+## Image Screen
 
-
-
-
+<div class="row">
+   <img src="assets/screenshot/home.png" alt="App Screenshot" width="150"/>
+   <img src="assets/screenshot/category.png" alt="App Screenshot" width="150"/>
+</div>

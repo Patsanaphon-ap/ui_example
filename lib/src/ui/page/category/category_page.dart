@@ -43,7 +43,6 @@ class CategoryPage extends StatelessWidget {
                     shrinkWrap: true,
                     children: [
                       CardWidget(
-                        textalign: Alignment.center,
                         subtitle: 'Discounts',
                         title: 'UP TO 80% OFF',
                         image:
@@ -53,25 +52,7 @@ class CategoryPage extends StatelessWidget {
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          Alignment alignment;
-                          switch (index % 4) {
-                            case 0:
-                              alignment = Alignment.centerRight; // Left
-                              break;
-                            case 1:
-                              alignment = Alignment.center; // Center
-                              break;
-                            case 2:
-                              alignment = Alignment.centerLeft; // Right
-                              break;
-                            case 3:
-                              alignment = Alignment.center; // Center again
-                              break;
-                            default:
-                              alignment = Alignment.centerLeft; // Fallback
-                          }
                           return CardWidget(
-                            textalign: alignment,
                             title: categoryCtrl.category[index].type,
                             image: categoryCtrl.category[index].image,
                             onTap: null,

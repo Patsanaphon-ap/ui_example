@@ -190,6 +190,20 @@ Widget text18BoldTheme(BuildContext context, String data,
   );
 }
 
+Widget text18BoldColor(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s16Bold.copyWith(
+        overflow: overflow, color: Colors.red, decoration: decoration),
+  );
+}
+
 Widget text22Normal(String data,
     {int? maxLines,
     TextOverflow? overflow,

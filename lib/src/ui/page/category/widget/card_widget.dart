@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:presentation/src/ui/widget/my_text.dart';
 
 class CardWidget extends StatelessWidget {
@@ -7,13 +6,11 @@ class CardWidget extends StatelessWidget {
   final String? subtitle;
   final VoidCallback? onTap;
   final String image;
-  final AlignmentGeometry? textalign;
   const CardWidget({
     super.key,
     required this.title,
     this.subtitle,
     required this.image,
-    required this.textalign,
     this.onTap,
   });
 
@@ -45,7 +42,6 @@ class CardWidget extends StatelessWidget {
                       subtitle ?? '',
                     ),
                   Align(
-                    alignment: textalign ?? Alignment.centerLeft,
                     child: text32BoldWhite(title),
                   ),
                 ],

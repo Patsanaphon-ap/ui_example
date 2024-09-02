@@ -66,6 +66,6 @@ ui_example/
 ## Image Screen
 
 <div class="row">
-   <img src="assets/screenshot/home.png" alt="App Screenshot" width="150"/>
-   <img src="assets/screenshot/category.png" alt="App Screenshot" width="150"/>
+   <img src="assets/screenshots/home.png" alt="App Screenshot" width="150"/>
+   <img src="assets/screenshots/category.png" alt="App Screenshot" width="150"/>
 </div>

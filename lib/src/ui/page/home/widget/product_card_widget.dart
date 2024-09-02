@@ -3,11 +3,24 @@ import 'package:get/get.dart';
 import 'package:presentation/src/ui/widget/my_text.dart';
 
 class ProductCardWidget extends StatelessWidget {
-  final int index;
+  final String herotag;
   final String photo;
+  final String type;
+  final String title;
+  final String price;
+  final String rating;
+  final String commentcount;
   final VoidCallback? onTap;
   const ProductCardWidget(
-      {super.key, required this.index, required this.photo, this.onTap});
+      {super.key,
+      required this.herotag,
+      required this.photo,
+      required this.type,
+      required this.title,
+      required this.price,
+      required this.rating,
+      required this.commentcount,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +40,7 @@ class ProductCardWidget extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Hero(
-                tag: "flashsalse-${index}",
+                tag: herotag,
                 child: Container(
                   margin: EdgeInsets.only(bottom: 12),
                   child: Image.network(
@@ -40,12 +53,12 @@ class ProductCardWidget extends StatelessWidget {
               ),
             ),
             text14Small(
-              "Camera",
+              type,
             ),
             Container(
               height: (Get.height * 0.06),
               child: text16Bold(
-                "Camera FUJI X-T10",
+                title,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -59,7 +72,7 @@ class ProductCardWidget extends StatelessWidget {
                   color: Colors.amber,
                 ),
                 text12Normal(
-                  "4.9 | 2356",
+                  "${rating} | ${commentcount}",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -75,7 +88,7 @@ class ProductCardWidget extends StatelessWidget {
                   ),
                 ),
                 text16BoldColor(
-                  "\$12.00",
+                  "\$${price}",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

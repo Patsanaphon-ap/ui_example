@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		Jf3yRg1PykFrs419W12HOOQMiWU=
+		k/AKJN9p9oKEyItCXxH3214CBGo=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		wIwyabuAsAc6GCf0XxHfT4kB7Gc=
+		NMv2EIvm8oyAAjIm+wfsxCZMUFE=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -36,6 +36,22 @@
 		<data>
 		lgkv7TmeQ+7S0eCrT9Dv68yvlIo=
 		</data>
+		<key>flutter_assets/assets/json/category.json</key>
+		<data>
+		aOXxolDpcsJnIcZ7GMuwfUN4ljQ=
+		</data>
+		<key>flutter_assets/assets/json/flashsales.json</key>
+		<data>
+		0KemMZQkW+N8pMeoVBMZ4+nvKxI=
+		</data>
+		<key>flutter_assets/assets/json/most_popular.json</key>
+		<data>
+		lAF9LgkBuFfQGBQM1lnp9IY3pDs=
+		</data>
+		<key>flutter_assets/assets/json/product.json</key>
+		<data>
+		AZp9MNImPYBN0fkGcR9QJ72XF0U=
+		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
 		/CUoTuPQqqdexfyOT9lpJhV+2MQ=
@@ -46,7 +62,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		aP2TgKb3hXT/VHgGRfnLZBhI5zE=
+		yrJPyVk1VkTLTaHsv6N7Oh1MxvM=
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -63,14 +79,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fBsCMjbsMsc1hPskHoquLOqs6mWXEhy8N3hVzb3D23s=
+			OXE7qndZ5+Gh5NYXJtLiJv+xbs3s08/SAl3MnegnqnY=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JZKMHtIx2bdLqhwRTCGYzY5Um+rg3ijkG/Va6xnO484=
+			Hmmayxy5EZbvfbaPEDT93zPEa1TKBRh/pjF4TvuxQkE=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -108,6 +124,34 @@
 			j/n1Kyiuyp2WSH2fIS8yYPUkFWUaAnAP/yThA82Wo5o=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/json/category.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			P0oWljPu2dBusFkYjuReZztkUAQNy6d1WwJZIMgWFX4=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/json/flashsales.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TFlWADXAWTTUO5FCmaiBEL6DighOyaQAGUW0fxZdrm8=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/json/most_popular.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cjB7oAwzO3TrWTyYjzvNsX+sHQ/Bx7R2oxyO9NMXHLg=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/json/product.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bmjnjuJchSXG2myRnPkPBQjyn0OZUAv7zqloS5wzu3s=
+			</data>
+		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<dict>
 			<key>hash2</key>
@@ -126,7 +170,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			39UdUzngmA/6nYq4/UFi/li2zHGNVlY4ZYBQE71j40Y=
+			mX+Efg9fbOz87UxlFQCndFhJS0I/i6lrNvKSYxbP8wA=
 			</data>
 		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>

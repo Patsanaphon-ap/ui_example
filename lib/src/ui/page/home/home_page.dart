@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:presentation/src/ui/page/home/widget/discount_widget.dart';
+import 'package:presentation/src/ui/page/home/category_home_widget.dart';
+import 'package:presentation/src/ui/page/home/discount_widget.dart';
 import 'package:presentation/src/ui/page/home/flash_sales_widget.dart';
-import 'package:presentation/src/ui/page/home/widget/location_widget.dart';
+import 'package:presentation/src/ui/page/home/location_widget.dart';
+import 'package:presentation/src/ui/page/home/most_popular_widget.dart';
 import 'package:presentation/src/ui/widget/my_appbar.dart';
 import 'package:presentation/src/ui/widget/my_page.dart';
 
@@ -17,6 +19,9 @@ class HomePage extends StatelessWidget {
       child: RefreshIndicator(
         onRefresh: () async {},
         child: ListView(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).padding.bottom + 80,
+          ),
           physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
           children: [
@@ -29,9 +34,9 @@ class HomePage extends StatelessWidget {
                 const LocationWidget(),
                 // const MenuWidget(),
                 const DiscountWidget(),
-
+                CategoryHomeWidget(),
                 FlashSalesWidget(),
-                SizedBox(height: MediaQuery.of(context).padding.bottom + 40),
+                MostPopularWidget(),
               ],
             ),
           ],

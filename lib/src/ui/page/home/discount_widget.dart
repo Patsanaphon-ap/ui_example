@@ -11,7 +11,7 @@ class DiscountWidget extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            margin: const EdgeInsets.only(bottom: 12, left: 8, right: 8),
+            margin: const EdgeInsets.only(bottom: 18, left: 8, right: 8),
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -33,11 +33,11 @@ class DiscountWidget extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    text18Bold(
+                    text18BoldWhite(
                       'Discounts',
                     ),
                     text32BoldWhite(
-                      '80% OFF',
+                      'UP TO 80% OFF',
                     ),
                     const SizedBox(
                       height: 12,

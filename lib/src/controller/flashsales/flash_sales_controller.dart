@@ -6,7 +6,7 @@ import 'package:presentation/src/data/models/products_model.dart';
 
 class FlashSalesController extends GetxController {
   bool isloading = true;
-  ProductModel product = ProductModel();
+  List<ProductModel> product = [];
 
   @override
   void onInit() {
@@ -20,10 +20,14 @@ class FlashSalesController extends GetxController {
     update();
 
     String jsonString =
-        await rootBundle.loadString('assets/json/exchange.json');
+        await rootBundle.loadString('assets/json/flashsales.json');
     // Parse the JSON string into a Map
     final Map<String, dynamic> response = jsonDecode(jsonString);
-    product = ProductModel.fromJson(response);
+    product = List<ProductModel>.from(
+      (response['products'] ?? []).map(
+        (e) => ProductModel.fromJson(e),
+      ),
+    );
     isloading = false;
     update();
   }

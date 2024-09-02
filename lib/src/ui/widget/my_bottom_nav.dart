@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:presentation/src/ui/page/category/category_page.dart';
 import 'package:presentation/src/ui/page/home/home_page.dart';
 import 'package:presentation/src/ui/page/option/option_page.dart';
 
@@ -17,9 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar>
 
   static final List<Widget> _widgetOptions = <Widget>[
     const HomePage(),
-    const Text(
-      'Index 1: Wallet',
-    ),
+    CategoryPage(),
     const Text(
       'Index 2: School',
     ),

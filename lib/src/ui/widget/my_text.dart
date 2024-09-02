@@ -160,6 +160,20 @@ Widget text18Bold(String data,
   );
 }
 
+Widget text18BoldWhite(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s18Bold.copyWith(
+        overflow: overflow, color: Colors.white, decoration: decoration),
+  );
+}
+
 Widget text18BoldTheme(BuildContext context, String data,
     {int? maxLines,
     TextOverflow? overflow,
@@ -227,6 +241,22 @@ Widget text22BoldWhite(String data,
     textAlign: textAlign,
     style: _s22Bold.copyWith(
         overflow: overflow, color: Colors.white, decoration: decoration),
+  );
+}
+
+Widget text18NormalTheme(BuildContext context, String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s18Normal.copyWith(
+        overflow: overflow,
+        color: Theme.of(context).primaryColor,
+        decoration: decoration),
   );
 }
 

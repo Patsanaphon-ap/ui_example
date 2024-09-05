@@ -17,6 +17,11 @@ ThemeData get lightTheme => ThemeData(
           backgroundColor: Colors.black,
         ),
       ),
+      tabBarTheme: TabBarTheme(
+        indicatorColor: Colors.blueAccent,
+        labelColor: Colors.blueAccent,
+        unselectedLabelColor: Colors.black,
+      ),
       appBarTheme: const AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle.dark,
           backgroundColor: Color.fromARGB(255, 244, 248, 255)),

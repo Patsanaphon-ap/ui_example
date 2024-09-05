@@ -38,7 +38,7 @@ class HistoryModel {
     return HistoryModel(
       id: json['id'],
       orderAt: DateTime.parse(json['order_at']),
-      estimatedArrival: json['estimated arrival'],
+      estimatedArrival: json['estimated_arrival'],
       shippingName: json['shipping_name'],
       shippingInfo: json['shipping_info'],
       totalPrice: price,

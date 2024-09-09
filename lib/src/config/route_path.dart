@@ -8,4 +8,5 @@ class RoutePath {
   static const history = '/history';
   static const profile = '/profile';
   static const productdetail = '/product/detail';
+  static const productlist = '/product/list';
 }

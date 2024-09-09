@@ -26,8 +26,12 @@ class FlashSalesWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  text22Bold(
-                    'Flash Sales',
+                  Expanded(
+                    child: text18Bold(
+                      'Flash Sales',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   //ClockCount
                   Countedownclock()
@@ -40,11 +44,13 @@ class FlashSalesWidget extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 18),
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
                           height: (Get.height * 0.3),
                           child: ListView.separated(
+                            shrinkWrap: true,
                             padding: EdgeInsets.symmetric(horizontal: 8),
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (BuildContext context, int index) {

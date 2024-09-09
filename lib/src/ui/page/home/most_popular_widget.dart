@@ -25,7 +25,7 @@ class MostPopularWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  text22Bold(
+                  text18Bold(
                     'Most Popular',
                   ),
                   //ClockCount

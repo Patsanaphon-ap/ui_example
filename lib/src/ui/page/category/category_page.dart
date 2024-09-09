@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:presentation/src/config/route_path.dart';
 import 'package:presentation/src/controller/category/category_controller.dart';
 import 'package:presentation/src/ui/page/category/widget/card_widget.dart';
 import 'package:presentation/src/ui/widget/my_load_widget.dart';
@@ -55,7 +56,14 @@ class CategoryPage extends StatelessWidget {
                           return CardWidget(
                             title: categoryCtrl.category[index].type,
                             image: categoryCtrl.category[index].image,
-                            onTap: null,
+                            onTap: () {
+                              Get.toNamed(
+                                RoutePath.productlist,
+                                parameters: {
+                                  'title': categoryCtrl.category[index].type
+                                },
+                              );
+                            },
                           );
                         },
                         separatorBuilder: (context, index) {

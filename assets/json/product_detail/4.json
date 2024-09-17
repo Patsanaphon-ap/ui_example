@@ -1,0 +1,75 @@
+{
+    "product": {
+        "id": 4,
+        "title": "Freshly Brewed",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "price": 280,
+        "discountPercentage": 17.91,
+        "rating": 4.3,
+        "comment": 180,
+        "stock": 130,
+        "brand": "COFFEE",
+        "category": "Coffee",
+        "thumbnail": "https://images.pexels.com/photos/1207918/pexels-photo-1207918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "images": [
+        "https://i.dummyjson.com/data/products/4/1.jpg",
+        "https://i.dummyjson.com/data/products/4/2.jpg",
+        "https://i.dummyjson.com/data/products/4/3.jpg",
+        "https://i.dummyjson.com/data/products/4/4.jpg",
+        "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
+        ],
+    "specifications": {
+        "material": "Glass",
+        "color": "Brown",
+        "weight": "500g",
+        "dimensions": {
+          "height": "15 cm",
+          "width": "8 cm",
+          "depth": "8 cm"
+        },
+        "features": [
+          "Freshly brewed coffee",
+          "Aromatic flavor",
+          "Rich and smooth taste",
+          "Reusable glass bottle",
+          "Perfect for daily use"
+        ]
+      },
+    "reviews": [
+        {
+          "username": "john_doe",
+          "rating": 5,
+          "comment": "Great headphones! The sound quality is amazing and the noise cancellation works perfectly.",
+          "date": "2024-09-01"
+        },
+        {
+          "username": "jane_smith",
+          "rating": 4,
+          "comment": "Very comfortable to wear for long periods, but the battery could be better.",
+          "date": "2024-09-05"
+        }
+      ],
+      "availability": "In Stock",
+      "deliveryOptions": {
+        "standard": "5-7 business days",
+        "express": "2-3 business days",
+        "same_day": "Available in selected cities"
+      },
+      "warranty": "1-year manufacturer warranty",
+      "returnPolicy": "30-day return policy",
+      "relatedProducts": [
+        {
+          "id": 2,
+          "title": "Wireless Earbuds",
+          "price": 49.99,
+          "thumbnail": "https://example.com/images/product2-thumbnail.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Noise Cancelling Over-Ear Headphones",
+          "price": 129.99,
+          "thumbnail": "https://example.com/images/product3-thumbnail.jpg"
+        }
+      ]
+    }
+  }

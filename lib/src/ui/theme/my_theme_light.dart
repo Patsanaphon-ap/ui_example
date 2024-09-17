@@ -8,6 +8,11 @@ ThemeData get lightTheme => ThemeData(
       primaryColor: Colors.blueAccent,
       primaryColorLight: Colors.blueGrey.shade50,
       primaryColorDark: Colors.black,
+      badgeTheme: BadgeThemeData(
+        textColor: Colors.white,
+        textStyle: TextStyle(color: Colors.white),
+        backgroundColor: Colors.red,
+      ),
       scaffoldBackgroundColor: Color.fromARGB(255, 244, 248, 255),
       indicatorColor: Colors.black12,
       dividerColor: Colors.grey,
@@ -23,6 +28,7 @@ ThemeData get lightTheme => ThemeData(
         unselectedLabelColor: Colors.black,
       ),
       appBarTheme: const AppBarTheme(
+          surfaceTintColor: Colors.transparent,
           systemOverlayStyle: SystemUiOverlayStyle.dark,
           backgroundColor: Color.fromARGB(255, 244, 248, 255)),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(

@@ -70,6 +70,9 @@ class FlashSalesWidget extends StatelessWidget {
                                     RoutePath.productdetail,
                                     arguments: {
                                       'herotag': "flashsalse-${index}",
+                                      'image': flashSalesCtrl
+                                          .product[index].thumbnail,
+                                      'sku': flashSalesCtrl.product[index].id
                                     },
                                   );
                                 },
@@ -82,7 +85,7 @@ class FlashSalesWidget extends StatelessWidget {
                                 width: 10,
                               );
                             },
-                            itemCount: 5,
+                            itemCount: flashSalesCtrl.product.length,
                           ),
                         ),
                       ],

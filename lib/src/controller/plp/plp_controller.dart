@@ -30,7 +30,6 @@ class PLPController extends GetxController {
         (e) => ProductModel.fromJson(e),
       ),
     );
-    print(product);
     isloading = false;
     update();
   }

@@ -36,3 +36,4 @@ flutter:
     - assets/images/mocks/
     - assets/icons/
     - assets/json/
+    - assets/json/product_detail/

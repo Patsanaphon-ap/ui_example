@@ -1,0 +1,73 @@
+{
+    "product": {
+        "id": 2,
+            "title": "Black Chair",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "price": 899,
+            "discountPercentage": 17.94,
+            "rating": 4.44,
+            "comment": 20,
+            "stock": 34,
+            "brand": "ChairSB",
+            "category": "Furniture",
+            "thumbnail": "https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "images": [
+            "https://i.dummyjson.com/data/products/2/1.jpg",
+            "https://i.dummyjson.com/data/products/2/2.jpg",
+            "https://i.dummyjson.com/data/products/2/3.jpg",
+            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+            ],
+        "specifications": {
+                "material": "Wood and Metal",
+                "color": "Black",
+                "weight": "7.5 kg",
+                "dimensions": {
+                  "height": "80 cm",
+                  "width": "50 cm",
+                  "depth": "45 cm"
+                },
+                "features": [
+                  "Ergonomic design",
+                  "Durable frame",
+                  "Anti-slip feet",
+                  "Comfortable cushion"
+                ]
+        },
+        "reviews": [
+          {
+            "username": "john_doe",
+            "rating": 5,
+            "comment": "Great headphones! The sound quality is amazing and the noise cancellation works perfectly.",
+            "date": "2024-09-01"
+          },
+          {
+            "username": "jane_smith",
+            "rating": 4,
+            "comment": "Very comfortable to wear for long periods, but the battery could be better.",
+            "date": "2024-09-05"
+          }
+        ],
+        "availability": "In Stock",
+        "deliveryOptions": {
+          "standard": "5-7 business days",
+          "express": "2-3 business days",
+          "same_day": "Available in selected cities"
+        },
+        "warranty": "1-year manufacturer warranty",
+        "returnPolicy": "30-day return policy",
+        "relatedProducts": [
+          {
+            "id": 2,
+            "title": "Wireless Earbuds",
+            "price": 49.99,
+            "thumbnail": "https://example.com/images/product2-thumbnail.jpg"
+          },
+          {
+            "id": 3,
+            "title": "Noise Cancelling Over-Ear Headphones",
+            "price": 129.99,
+            "thumbnail": "https://example.com/images/product3-thumbnail.jpg"
+          }
+        ]
+    }
+}

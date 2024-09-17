@@ -5,6 +5,7 @@ class ProductModel {
   int price;
   double discountPercentage;
   double rating;
+  int comment;
   int stock;
   String brand;
   String category;
@@ -18,6 +19,7 @@ class ProductModel {
     this.price = 0,
     this.discountPercentage = 0.00,
     this.rating = 0.00,
+    this.comment = 0,
     this.stock = 0,
     this.brand = '',
     this.category = '',
@@ -33,6 +35,7 @@ class ProductModel {
       price: json['price'] ?? 0,
       discountPercentage: (json['discountPercentage'] ?? 0.00).toDouble(),
       rating: (json['rating'] ?? 0.00).toDouble(),
+      comment: json['comment'] ?? 0,
       stock: json['stock'] ?? 0,
       brand: json['brand'] ?? '',
       category: json['category'] ?? '',

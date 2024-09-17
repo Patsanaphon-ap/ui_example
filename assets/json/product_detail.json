@@ -1,0 +1,74 @@
+{
+  "product": {
+      "id": 2,
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "comment": 180,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/2/1.jpg",
+        "https://i.dummyjson.com/data/products/2/2.jpg",
+        "https://i.dummyjson.com/data/products/2/3.jpg",
+        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+      ],
+      "specifications": {
+            "sensorType": "APS-C X-Trans CMOS II",
+            "megapixels": 16.3,
+            "lensMount": "Fujifilm X mount",
+            "ISO": "200-6400 (Expandable to 100-51200)",
+            "shutterSpeed": "30 sec to 1/4000 sec",
+            "continuousShootingSpeed": "8 fps",
+            "videoResolution": "Full HD 1080p at 60 fps",
+            "viewfinder": "0.39\" OLED, 2.36M-dot",
+            "screenType": "3.0\" Tilting LCD Screen",
+            "screenResolution": "920K-dot",
+            "connectivity": "Wi-Fi, USB 2.0, HDMI",
+            "batteryLife": "Approx. 350 shots per charge",
+            "dimensions": "118.4 x 82.8 x 40.8 mm",
+            "weight": "381 g (body only)",
+            "colorOptions": ["Black", "Silver"]
+      },
+      "reviews": [
+        {
+            "username": "john_doe",
+            "rating": 5,
+            "comment": "Great headphones! The sound quality is amazing and the noise cancellation works perfectly.",
+            "date": "2024-09-01"
+        },
+        {
+            "username": "jane_smith",
+            "rating": 4,
+            "comment": "Very comfortable to wear for long periods, but the battery could be better.",
+            "date": "2024-09-05"
+        }
+      ],
+      "availability": "In Stock",
+      "deliveryOptions": {
+          "standard": "5-7 business days",
+          "express": "2-3 business days",
+          "same_day": "Available in selected cities"
+      },
+      "warranty": "1-year manufacturer warranty",
+      "returnPolicy": "30-day return policy",
+      "relatedProducts": [
+        {
+          "id": 2,
+          "title": "Wireless Earbuds",
+          "price": 49.99,
+          "thumbnail": "https://example.com/images/product2-thumbnail.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Noise Cancelling Over-Ear Headphones",
+          "price": 129.99,
+          "thumbnail": "https://example.com/images/product3-thumbnail.jpg"
+        }
+      ]
+  }
+}

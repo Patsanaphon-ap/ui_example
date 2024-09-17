@@ -230,6 +230,20 @@ Widget text22Bold(String data,
   );
 }
 
+Widget text22BoldGreen(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s22Bold.copyWith(
+        overflow: overflow, color: Colors.green, decoration: decoration),
+  );
+}
+
 Widget text22BoldBlack(String data,
     {int? maxLines,
     TextOverflow? overflow,

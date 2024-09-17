@@ -106,16 +106,18 @@ class PLPPage extends StatelessWidget {
             price: plpCtrl.product[index].price.toString(),
             rating: plpCtrl.product[index].rating.toString(),
             commentcount: plpCtrl.product[index].stock.toString(),
+            photo: plpCtrl.product[index].thumbnail,
+            description: plpCtrl.product[index].description,
             onTap: () {
               Get.toNamed(
                 RoutePath.productdetail,
                 arguments: {
                   'herotag': "${title}-product-${index}",
+                  'image': plpCtrl.product[index].thumbnail,
+                  'sku': plpCtrl.product[index].id
                 },
               );
             },
-            photo: plpCtrl.product[index].thumbnail,
-            description: plpCtrl.product[index].description,
           ),
         );
       },
@@ -142,15 +144,17 @@ class PLPPage extends StatelessWidget {
             price: plpCtrl.product[index].price.toString(),
             rating: plpCtrl.product[index].rating.toString(),
             commentcount: plpCtrl.product[index].stock.toString(),
+            photo: plpCtrl.product[index].thumbnail,
             onTap: () {
               Get.toNamed(
                 RoutePath.productdetail,
                 arguments: {
                   'herotag': "${title}-product-${index}",
+                  'image': plpCtrl.product[index].thumbnail,
+                  'sku': plpCtrl.product[index].id
                 },
               );
             },
-            photo: plpCtrl.product[index].thumbnail,
           ),
         );
       },

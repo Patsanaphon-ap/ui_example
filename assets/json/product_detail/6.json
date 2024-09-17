@@ -1,0 +1,74 @@
+{
+    "product": {
+        "id": 6,
+            "title": "J Coffee Cup",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "price": 1749,
+            "discountPercentage": 11.02,
+            "rating": 4.57,
+            "comment": 129,
+            "stock": 83,
+            "brand": "Coffee",
+            "category": "Coffee",
+            "thumbnail": "https://images.pexels.com/photos/8811534/pexels-photo-8811534.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "images": [
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
+        ],
+    "specifications": {
+        "material": "Ceramic",
+        "color": "White",
+        "weight": "300g",
+        "dimensions": {
+          "height": "10 cm",
+          "width": "8 cm",
+          "depth": "8 cm"
+        },
+        "features": [
+          "Matte black finish",
+          "Heat-resistant ceramic",
+          "Comfortable grip handle",
+          "Dishwasher safe",
+          "Perfect for hot and cold beverages"
+        ]
+      },
+    "reviews": [
+        {
+          "username": "john_doe",
+          "rating": 5,
+          "comment": "Great headphones! The sound quality is amazing and the noise cancellation works perfectly.",
+          "date": "2024-09-01"
+        },
+        {
+          "username": "jane_smith",
+          "rating": 4,
+          "comment": "Very comfortable to wear for long periods, but the battery could be better.",
+          "date": "2024-09-05"
+        }
+      ],
+      "availability": "In Stock",
+      "deliveryOptions": {
+        "standard": "5-7 business days",
+        "express": "2-3 business days",
+        "same_day": "Available in selected cities"
+      },
+      "warranty": "1-year manufacturer warranty",
+      "returnPolicy": "30-day return policy",
+      "relatedProducts": [
+        {
+          "id": 2,
+          "title": "Wireless Earbuds",
+          "price": 49.99,
+          "thumbnail": "https://example.com/images/product2-thumbnail.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Noise Cancelling Over-Ear Headphones",
+          "price": 129.99,
+          "thumbnail": "https://example.com/images/product3-thumbnail.jpg"
+        }
+      ]
+    }
+  }

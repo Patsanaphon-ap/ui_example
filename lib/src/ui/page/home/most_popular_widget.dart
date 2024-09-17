@@ -65,6 +65,9 @@ class MostPopularWidget extends StatelessWidget {
                                     RoutePath.productdetail,
                                     arguments: {
                                       'herotag': "most-popular-${index}",
+                                      'image': mostPopularCtrl
+                                          .product[index].thumbnail,
+                                      'sku': mostPopularCtrl.product[index].id
                                     },
                                   );
                                 },

@@ -211,41 +211,41 @@ class ProductDetailPage extends StatelessWidget {
   }
 
   Widget _productRating() {
-    return _row(
-      child: Row(
-        children: [
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.star_rate_rounded,
-                  color: Colors.amber,
-                ),
-                text14Normal(
-                  '${productDetailCtrl.product.rating} Ratings',
-                  textAlign: TextAlign.center,
-                ),
-              ],
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.star_rate_rounded,
+              color: Colors.amber,
             ),
-          ),
-          text14Normal(' | '),
-          Expanded(
-            child: text14Normal(
-              '${productDetailCtrl.product.comment} Reviews',
+            text14Normal(
+              '${productDetailCtrl.product.rating} Ratings',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
             ),
-          ),
-          text14Normal(' | '),
-          Expanded(
-            child: text14Normal(
-              '${productDetailCtrl.product.stock} In Stock',
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ],
-      ),
+          ],
+        ),
+        text14Normal(' | '),
+        text14Normal(
+          '${productDetailCtrl.product.comment} Reviews',
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
+        ),
+        text14Normal(' | '),
+        text14Normal(
+          '${productDetailCtrl.product.stock} In Stock',
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 
@@ -270,52 +270,54 @@ class ProductDetailPage extends StatelessWidget {
               controller: productDetailCtrl.tabcontroller,
               children: [
                 _aboutItem(),
-                ListView.separated(
-                  itemCount: productDetailCtrl.product.reviews?.length ?? 0,
-                  shrinkWrap: true,
-                  separatorBuilder: (_, index) {
-                    return Divider();
-                  },
-                  itemBuilder: (_, index) {
-                    return Column(
-                      children: [
-                        Row(
-                          children: [
-                            text18Bold(
-                              productDetailCtrl
-                                      .product.reviews?[index].username ??
-                                  '',
-                            ),
-                          ],
-                        ),
-                        text16Normal(
-                          productDetailCtrl.product.reviews?[index].comment ??
-                              '',
-                          maxLines: 3,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.star_rate_rounded,
-                              color: Colors.amber,
-                            ),
-                            text14Normal(
-                              '${productDetailCtrl.product.reviews?[index].rating} Ratings',
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ],
-                    );
-                  },
-                ),
+                _aboutReview(),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  ListView _aboutReview() {
+    return ListView.separated(
+      physics: NeverScrollableScrollPhysics(),
+      itemCount: productDetailCtrl.product.reviews?.length ?? 0,
+      shrinkWrap: true,
+      separatorBuilder: (_, index) {
+        return Divider();
+      },
+      itemBuilder: (_, index) {
+        return Column(
+          children: [
+            Row(
+              children: [
+                text18Bold(
+                  productDetailCtrl.product.reviews?[index].username ?? '',
+                ),
+              ],
+            ),
+            text16Normal(
+              productDetailCtrl.product.reviews?[index].comment ?? '',
+              maxLines: 3,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.star_rate_rounded,
+                  color: Colors.amber,
+                ),
+                text14Normal(
+                  '${productDetailCtrl.product.reviews?[index].rating} Ratings',
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ],
+        );
+      },
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:presentation/src/ui/widget/my_cart.dart';
 import 'package:presentation/src/ui/widget/my_text.dart';
 
 class MyAppbar extends StatelessWidget {
@@ -47,18 +48,7 @@ class MyAppbar extends StatelessWidget {
               const SizedBox(
                 width: 12,
               ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Theme.of(context).dividerColor,
-                    width: .5,
-                  ),
-                  borderRadius: const BorderRadius.all(Radius.circular(12)),
-                ),
-                child: const Icon(Icons.notifications_outlined),
-              ),
+              MyCartBoarderWidget(),
             ],
           ),
         ],

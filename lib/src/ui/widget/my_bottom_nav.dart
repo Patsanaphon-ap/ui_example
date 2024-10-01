@@ -15,30 +15,39 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar>
     with WidgetsBindingObserver {
-  int _selectedIndex = 0;
+  int _selectedIndex =
+      0; // Tracks the selected index for the BottomNavigationBar
 
+  // List of pages corresponding to each tab
   static final List<Widget> _widgetOptions = <Widget>[
-    const HomePage(),
+    HomePage(),
     CategoryPage(),
     HistoryPage(),
     OptionPage(),
   ];
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Save the MediaQuery padding reference in didChangeDependencies
+  }
+
+  @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance.addObserver(this); // Observer for lifecycle events
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this); // Clean up the observer
     super.dispose();
   }
 
+  // Method to handle tab taps
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      _selectedIndex = index; // Update the selected index
     });
   }
 
@@ -49,6 +58,7 @@ class _BottomNavBarState extends State<BottomNavBar>
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButton: Container(
         margin: EdgeInsets.only(
+          bottom: 5,
           left: MediaQuery.of(context).padding.left + 20,
           right: MediaQuery.of(context).padding.right + 20,
         ),
@@ -69,7 +79,7 @@ class _BottomNavBarState extends State<BottomNavBar>
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.list_outlined),
-                label: 'category',
+                label: 'Category',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.history),
@@ -80,12 +90,13 @@ class _BottomNavBarState extends State<BottomNavBar>
                 label: 'Settings',
               ),
             ],
-            currentIndex: _selectedIndex,
-            onTap: _onItemTapped,
+            currentIndex: _selectedIndex, // Sets the currently selected tab
+            onTap: _onItemTapped, // Callback for tab tap
           ),
         ),
       ),
-      body: _widgetOptions.elementAt(_selectedIndex),
+      body: _widgetOptions
+          .elementAt(_selectedIndex), // Displays the selected page
     );
   }
 }

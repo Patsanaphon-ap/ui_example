@@ -50,7 +50,8 @@ class MyPage extends StatelessWidget {
               //frame
               Expanded(
                 child: useScroll
-                    ? SingleChildScrollView(child: child)
+                    ? SingleChildScrollView(
+                        child: child ?? const SizedBox.shrink())
                     : child ?? const SizedBox.shrink(),
               ),
             ],

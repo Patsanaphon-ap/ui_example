@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:presentation/src/controller/home/home_controller.dart';
 import 'package:presentation/src/ui/page/home/category_home_widget.dart';
 import 'package:presentation/src/ui/page/home/discount_widget.dart';
 import 'package:presentation/src/ui/page/home/flash_sales_widget.dart';
@@ -9,9 +11,10 @@ import 'package:presentation/src/ui/widget/my_page.dart';
 
 /// Displays a list of SampleItems.
 class HomePage extends StatelessWidget {
-  const HomePage({
+  HomePage({
     super.key,
   });
+  final homectrl = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {

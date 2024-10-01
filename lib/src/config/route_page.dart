@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:presentation/src/controller/home/home_binding.dart';
+import 'package:presentation/src/ui/page/cart/cart_page.dart';
 import 'package:presentation/src/ui/page/home/home_page.dart';
 import 'package:presentation/src/ui/page/pdp/product_detail_page.dart';
 import 'package:presentation/src/ui/page/plp/plp_page.dart';
@@ -17,11 +19,12 @@ class RoutePages {
             const Scaffold(body: Center(child: Text('Page Not Found.')))),
     GetPage(
       name: RoutePath.home,
-      page: () => const HomePage(),
+      page: () => HomePage(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: RoutePath.bottomnav,
-      page: () => const BottomNavBar(),
+      page: () => BottomNavBar(),
     ),
     GetPage(
       name: RoutePath.productdetail,
@@ -30,6 +33,10 @@ class RoutePages {
     GetPage(
       name: RoutePath.productlist,
       page: () => PLPPage(),
+    ),
+    GetPage(
+      name: RoutePath.cart,
+      page: () => CartPage(),
     ),
   ];
 }

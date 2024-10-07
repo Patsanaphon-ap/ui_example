@@ -56,45 +56,79 @@ class _BottomNavBarState extends State<BottomNavBar>
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
-      floatingActionButton: Container(
-        margin: EdgeInsets.only(
-          bottom: 5,
-          left: MediaQuery.of(context).padding.left + 20,
-          right: MediaQuery.of(context).padding.right + 20,
-        ),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.all(
-            Radius.circular(30),
-          ),
-          child: BottomNavigationBar(
-            useLegacyColorScheme: false,
-            showUnselectedLabels: false,
-            showSelectedLabels: false,
-            iconSize: 32,
-            elevation: 0,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
-                label: 'Home',
+      floatingActionButton: (MediaQuery.of(context).padding.bottom == 0)
+          ? ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.list_outlined),
-                label: 'Category',
+              child: BottomNavigationBar(
+                useLegacyColorScheme: false,
+                showUnselectedLabels: false,
+                showSelectedLabels: false,
+                iconSize: 32,
+                elevation: 0,
+                items: const <BottomNavigationBarItem>[
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.home_outlined),
+                    label: 'Home',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.list_outlined),
+                    label: 'Category',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.history),
+                    label: 'History',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.settings),
+                    label: 'Settings',
+                  ),
+                ],
+                currentIndex: _selectedIndex, // Sets the currently selected tab
+                onTap: _onItemTapped, // Callback for tab tap
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.history),
-                label: 'History',
+            )
+          : Container(
+              margin: EdgeInsets.only(
+                left: MediaQuery.of(context).padding.left + 20,
+                right: MediaQuery.of(context).padding.right + 20,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'Settings',
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(30),
+                ),
+                child: BottomNavigationBar(
+                  useLegacyColorScheme: false,
+                  showUnselectedLabels: false,
+                  showSelectedLabels: false,
+                  iconSize: 32,
+                  elevation: 0,
+                  items: const <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.home_outlined),
+                      label: 'Home',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.list_outlined),
+                      label: 'Category',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.history),
+                      label: 'History',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.settings),
+                      label: 'Settings',
+                    ),
+                  ],
+                  currentIndex:
+                      _selectedIndex, // Sets the currently selected tab
+                  onTap: _onItemTapped, // Callback for tab tap
+                ),
               ),
-            ],
-            currentIndex: _selectedIndex, // Sets the currently selected tab
-            onTap: _onItemTapped, // Callback for tab tap
-          ),
-        ),
-      ),
+            ),
       body: _widgetOptions
           .elementAt(_selectedIndex), // Displays the selected page
     );

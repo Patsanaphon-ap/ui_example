@@ -58,7 +58,7 @@ class MostPopularWidget extends StatelessWidget {
                                 rating: mostPopularCtrl.product[index].rating
                                     .toString(),
                                 commentcount: mostPopularCtrl
-                                    .product[index].stock
+                                    .product[index].comment
                                     .toString(),
                                 onTap: () {
                                   Get.toNamed(

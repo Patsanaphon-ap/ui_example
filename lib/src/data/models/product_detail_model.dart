@@ -1,4 +1,4 @@
-class ProductDetailModel {
+class ProductModel {
   int id;
   String title;
   String description;
@@ -10,6 +10,7 @@ class ProductDetailModel {
   String brand;
   String category;
   String thumbnail;
+  int qty;
   List<String>? images;
   Specifications? specifications;
   List<Review>? reviews;
@@ -19,7 +20,7 @@ class ProductDetailModel {
   String returnPolicy;
   List<RelatedProduct>? relatedProducts;
 
-  ProductDetailModel({
+  ProductModel({
     this.id = 0,
     this.title = '',
     this.description = '',
@@ -31,6 +32,7 @@ class ProductDetailModel {
     this.brand = '',
     this.category = '',
     this.thumbnail = '',
+    this.qty = 0,
     this.images,
     this.specifications,
     this.reviews,
@@ -41,8 +43,8 @@ class ProductDetailModel {
     this.relatedProducts,
   });
 
-  factory ProductDetailModel.fromJson(Map<String, dynamic> json) {
-    return ProductDetailModel(
+  factory ProductModel.fromJson(Map<String, dynamic> json) {
+    return ProductModel(
       id: json['id'] ?? 0,
       title: json['title'] ?? '',
       description: json['description'] ?? '',
@@ -58,17 +60,17 @@ class ProductDetailModel {
               ?.map((item) => item as String)
               .toList() ??
           [],
-      specifications: Specifications.fromJson(json['specifications']),
+      specifications: Specifications.fromJson(json['specifications'] ?? {}),
       reviews: (json['reviews'] as List<dynamic>?)
               ?.map(
                 (item) => Review.fromJson(item as Map<String, dynamic>),
               )
               .toList() ??
           [],
-      availability: json['availability'],
-      deliveryOptions: DeliveryOptions.fromJson(json['deliveryOptions']),
-      warranty: json['warranty'],
-      returnPolicy: json['returnPolicy'],
+      availability: json['availability'] ?? '',
+      deliveryOptions: DeliveryOptions.fromJson(json['deliveryOptions'] ?? {}),
+      warranty: json['warranty'] ?? '',
+      returnPolicy: json['returnPolicy'] ?? '',
       relatedProducts: (json['relatedProducts'] as List<dynamic>?)
               ?.map((item) =>
                   RelatedProduct.fromJson(item as Map<String, dynamic>))
@@ -91,9 +93,9 @@ class DeliveryOptions {
 
   factory DeliveryOptions.fromJson(Map<String, dynamic> json) {
     return DeliveryOptions(
-      standard: json['standard'],
-      express: json['express'],
-      sameDay: json['same_day'],
+      standard: json['standard'] ?? '',
+      express: json['express'] ?? '',
+      sameDay: json['same_day'] ?? '',
     );
   }
 }
@@ -161,11 +163,11 @@ class Specifications {
 
   factory Specifications.fromJson(Map<String, dynamic> json) {
     return Specifications(
-        material: json['material'],
-        color: json['color'],
-        weight: json['weight'],
-        dimensions: Dimensions.fromJson(json['dimensions']),
-        features: List<String>.from(json['features']));
+        material: json['material'] ?? '',
+        color: json['color'] ?? '',
+        weight: json['weight'] ?? '',
+        dimensions: Dimensions.fromJson(json['dimensions'] ?? {}),
+        features: List<String>.from(json['features'] ?? []));
   }
 }
 
@@ -175,13 +177,16 @@ class Dimensions {
   final String depth;
 
   Dimensions({
-    required this.height,
-    required this.width,
-    required this.depth,
+    this.height = '',
+    this.width = '',
+    this.depth = '',
   });
 
   factory Dimensions.fromJson(Map<String, dynamic> json) {
     return Dimensions(
-        height: json['height'], width: json['width'], depth: json['depth']);
+      height: json['height'] ?? '',
+      width: json['width'] ?? '',
+      depth: json['depth'] ?? '',
+    );
   }
 }

@@ -9,22 +9,27 @@ class MyCartWidget extends StatelessWidget {
   final CartController cartCtrl = Get.put(CartController());
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<CartController>(
-      builder: (_) {
-        return IconButton(
-          onPressed: () {
-            // do something
-          },
-          icon: Badge(
-            isLabelVisible: true,
-            label: text14Normal("2"),
-            offset: const Offset(4, -8),
-            child: Icon(
-              Icons.shopping_cart_outlined,
-            ),
-          ),
-        );
-      },
+    return ObxValue(
+      (data) => IconButton(
+        onPressed: () {
+          Get.toNamed(RoutePath.cart);
+        },
+        icon: (cartCtrl.count.value > 0)
+            ? Badge(
+                isLabelVisible: true,
+                label: text14Normal(
+                  data.toString(),
+                ),
+                offset: const Offset(4, -8),
+                child: Icon(
+                  Icons.shopping_cart_outlined,
+                ),
+              )
+            : Icon(
+                Icons.shopping_cart_outlined,
+              ),
+      ),
+      cartCtrl.count.obs,
     );
   }
 }
@@ -34,31 +39,34 @@ class MyCartBoarderWidget extends StatelessWidget {
   final CartController cartCtrl = Get.put(CartController());
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<CartController>(
-      builder: (_) {
-        return Obx(() => Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Theme.of(context).dividerColor,
-                  width: .5,
-                ),
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
-              ),
-              child: IconButton(
-                onPressed: () {
-                  Get.toNamed(RoutePath.cart);
-                },
-                icon: Badge(
+    return ObxValue(
+      (data) => Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Theme.of(context).dividerColor,
+            width: .5,
+          ),
+          borderRadius: const BorderRadius.all(Radius.circular(12)),
+        ),
+        child: IconButton(
+          onPressed: () {
+            Get.toNamed(RoutePath.cart);
+          },
+          icon: (cartCtrl.count.value > 0)
+              ? Badge(
                   isLabelVisible: true,
                   label: text14Normal(cartCtrl.count.value.toString()),
                   offset: const Offset(6, -8),
                   child: Icon(
                     Icons.shopping_cart_outlined,
                   ),
+                )
+              : Icon(
+                  Icons.shopping_cart_outlined,
                 ),
-              ),
-            ));
-      },
+        ),
+      ),
+      cartCtrl.count.obs,
     );
   }
 }

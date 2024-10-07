@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:presentation/src/data/models/products_model.dart';
+import 'package:presentation/src/data/models/product_detail_model.dart';
 
 class FlashSalesController extends GetxController {
   bool isloading = true;

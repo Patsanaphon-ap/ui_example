@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:presentation/src/controller/cart/cart_controller.dart';
 import 'package:presentation/src/controller/productdetail/product_detail_controller.dart';
 import 'package:presentation/src/ui/widget/my_cart.dart';
 import 'package:presentation/src/ui/widget/my_favorite.dart';
@@ -7,7 +8,6 @@ import 'package:presentation/src/ui/widget/my_load_widget.dart';
 import 'package:presentation/src/ui/widget/my_page.dart';
 import 'package:presentation/src/ui/widget/my_share.dart';
 import 'package:presentation/src/ui/widget/my_text.dart';
-import 'package:presentation/src/util/format_util.dart';
 
 class ProductDetailPage extends StatelessWidget {
   ProductDetailPage({super.key});
@@ -78,30 +78,37 @@ class ProductDetailPage extends StatelessWidget {
   }
 
   Widget _productImage() {
-    return Builder(
-      builder: (context) {
-        if (Get.arguments['herotag'] != null)
-          return Hero(
-            tag: Get.arguments['herotag'],
-            child: Container(
-              margin: EdgeInsets.only(
-                bottom: 12,
-              ),
-              child: Image.network(
-                height: 300,
-                width: double.infinity,
-                fit: BoxFit.cover,
-                Get.arguments['image'],
-              ),
-            ),
+    final herotag = productDetailCtrl.herotag;
+    final image = productDetailCtrl.image;
+    if (herotag.isNotEmpty) {
+      return Hero(
+        tag: herotag,
+        child: Container(
+          margin: EdgeInsets.only(
+            bottom: 12,
+          ),
+          child: Image.network(
+            image,
+            height: 300,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+        ),
+      );
+    } else {
+      return GetBuilder<ProductDetailController>(
+        builder: (_) {
+          if (productDetailCtrl.isloading) {
+            return SizedBox();
+          }
+          return Image.network(
+            width: double.infinity,
+            fit: BoxFit.cover,
+            'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
           );
-        return Image.network(
-          width: double.infinity,
-          fit: BoxFit.cover,
-          'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-        );
-      },
-    );
+        },
+      );
+    }
   }
 
   Widget _bottomNavigationBar(context) {
@@ -128,34 +135,65 @@ class ProductDetailPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Row(
+              Obx(
+                () => Row(
+                  children: [
+                    Row(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              text14Normal("Total Price"),
-                              text22BoldGreen(
-                                '\$${money.format(productDetailCtrl.product.price)}',
-                              ),
-                            ],
+                        IconButton(
+                          onPressed: productDetailCtrl.qty.value <= 1
+                              ? null
+                              : () => productDetailCtrl.qty.value--,
+                          icon: Icon(Icons.remove),
+                        ),
+                        Container(
+                          width: 30,
+                          child: text18Bold(
+                            productDetailCtrl.qty.value.toString(),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: productDetailCtrl.qty.value >=
+                                  productDetailCtrl.product.stock
+                              ? null
+                              : () => productDetailCtrl.qty.value++,
+                          icon: Icon(
+                            Icons.add,
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.add_shopping_cart_outlined,
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Get.find<CartController>().onAddProduct(
+                                  productData: productDetailCtrl.product,
+                                  qty: productDetailCtrl.qty.value,
+                                );
+                              },
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  text18Bold("Add to Cart"),
+                                  text18Bold(
+                                    (productDetailCtrl.product.price *
+                                            productDetailCtrl.qty.value)
+                                        .toString(),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    label: text18Bold("Add to Cart"),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),

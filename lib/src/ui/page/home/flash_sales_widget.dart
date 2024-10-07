@@ -63,7 +63,7 @@ class FlashSalesWidget extends StatelessWidget {
                                 rating: flashSalesCtrl.product[index].rating
                                     .toString(),
                                 commentcount: flashSalesCtrl
-                                    .product[index].stock
+                                    .product[index].comment
                                     .toString(),
                                 onTap: () {
                                   Get.toNamed(

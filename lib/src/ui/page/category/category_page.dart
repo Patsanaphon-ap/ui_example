@@ -39,7 +39,8 @@ class CategoryPage extends StatelessWidget {
                 Expanded(
                   child: ListView(
                     padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).padding.bottom + 40),
+                      bottom: MediaQuery.of(context).padding.bottom + 70,
+                    ),
                     physics: const BouncingScrollPhysics(),
                     shrinkWrap: true,
                     children: [

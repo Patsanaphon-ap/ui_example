@@ -147,6 +147,20 @@ Widget text18Normal(String data,
   );
 }
 
+Widget text18NormalColor(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s18Normal.copyWith(
+        overflow: overflow, color: Colors.green, decoration: decoration),
+  );
+}
+
 Widget text18Bold(String data,
     {int? maxLines,
     TextOverflow? overflow,

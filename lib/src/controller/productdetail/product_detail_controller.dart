@@ -8,11 +8,16 @@ import 'package:presentation/src/data/models/product_detail_model.dart';
 class ProductDetailController extends GetxController
     with GetSingleTickerProviderStateMixin {
   bool isloading = true;
-  ProductDetailModel product = ProductDetailModel();
+  String image = '';
+  String herotag = '';
+  RxInt qty = 1.obs;
+  ProductModel product = ProductModel();
   late TabController tabcontroller;
 
   @override
   void onInit() {
+    herotag = Get.arguments['herotag'];
+    image = Get.arguments['image'];
     tabcontroller = TabController(vsync: this, length: 2, initialIndex: 0);
     Future.delayed(const Duration(milliseconds: 400))
         .then((value) => onLoadData());
@@ -33,7 +38,7 @@ class ProductDetailController extends GetxController
         await rootBundle.loadString('assets/json/product_detail/${sku}.json');
     // Parse the JSON string into a Map
     final Map<String, dynamic> response = jsonDecode(jsonString);
-    product = ProductDetailModel.fromJson(response['product']);
+    product = ProductModel.fromJson(response['product']);
     await Future.delayed(const Duration(milliseconds: 400));
     isloading = false;
     update();

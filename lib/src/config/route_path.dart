@@ -10,4 +10,5 @@ class RoutePath {
   static const productdetail = '/product/detail';
   static const productlist = '/product/list';
   static const cart = '/cart';
+  static const coupon = '/coupon';
 }

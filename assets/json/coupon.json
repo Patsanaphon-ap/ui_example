@@ -1,0 +1,37 @@
+{
+    "coupons": [
+      {
+        "coupon_id": 1,
+        "code": "WELCOME10",
+        "discount": {
+          "type": "p",
+          "title": "10% Discount",
+          "value": 10
+        },
+        "expiration_date": "2024-12-31",
+        "terms": "Valid for new users only. Minimum purchase of $50."
+      },
+      {
+        "coupon_id": 2,
+        "code": "FALLSALE20",
+        "discount": {
+          "type": "d",
+          "title": "20$ Discount",
+          "value": 20
+        },
+        "expiration_date": "2024-11-01",
+        "terms": "Applicable on selected items only."
+      },
+      {
+        "coupon_id": 3,
+        "code": "FREESHIP",
+        "discount": {
+          "type": "s",
+          "title": "Free Shipping",
+          "value": null
+        },
+        "expiration_date": "2025-01-15",
+        "terms": "Free shipping on orders over $30."
+      }
+    ]
+  }

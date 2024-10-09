@@ -44,7 +44,7 @@ class HistoryConfirmPage extends StatelessWidget {
                         }
                         HistoryModel data = historyCtrl.order[index];
                         final price = money.format(data.totalPrice);
-                        final date = dateformat.format(
+                        final date = datetimeformat.format(
                           data.orderAt ?? DateTime.now(),
                         );
                         return HistoryCardWidget(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:presentation/src/config/route_path.dart';
 import 'package:presentation/src/controller/cart/cart_controller.dart';
 import 'package:presentation/src/data/models/product_detail_model.dart';
+import 'package:presentation/src/ui/page/cart/widget/cart_card_widget.dart';
 import 'package:presentation/src/ui/page/cart/widget/cart_empty.dart';
 import 'package:presentation/src/ui/widget/my_load_widget.dart';
 import 'package:presentation/src/ui/widget/my_page.dart';
@@ -61,100 +63,11 @@ class CartPage extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       itemBuilder: (_, index) {
         ProductModel data = cartCtrl.productCart[index];
-        return Container(
-          padding: EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Row(
-            children: [
-              Column(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                      16.0,
-                    ),
-                    child: Image.network(
-                      data.thumbnail,
-                      height: 100,
-                      width: 100,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 12,
-              ),
-              Expanded(
-                child: Column(
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              text18Bold(
-                                data.title,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              text14Normal(
-                                data.brand,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ],
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            cartCtrl.onDeleteProduct(productDelete: data);
-                          },
-                          child: Icon(
-                            Icons.delete_outlined,
-                          ),
-                        )
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        text18Bold(
-                          '\$ ${(data.price * data.qty)}',
-                          maxLines: 1,
-                        ),
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: (data.qty <= 1)
-                                  ? null
-                                  : () {
-                                      cartCtrl.decreaseQty(index: index);
-                                    },
-                              icon: Icon(Icons.remove),
-                            ),
-                            text18Bold(data.qty.toString()),
-                            IconButton(
-                              onPressed: () {
-                                cartCtrl.increaseQty(index: index);
-                              },
-                              icon: Icon(
-                                Icons.add,
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+        return CartCardWidget(
+          data: data,
+          onDelete: () => cartCtrl.onDeleteProduct(productDelete: data),
+          onDecrease: () => cartCtrl.onDcreaseQty(index: index),
+          onIncrease: () => cartCtrl.onIncreaseQty(index: index),
         );
       },
       itemCount: cartCtrl.productCart.length,
@@ -174,15 +87,25 @@ class CartPage extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          text18Normal('Have a coupon code?'),
-          TextButton(
-            onPressed: () {},
-            child: text18Normal('Apply'),
-          ),
-        ],
+      child: ObxValue(
+        (coupon) => Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              cartCtrl.onSelectCoupon.value.code.isNotEmpty
+                  ? 'Coupon Applied: ${cartCtrl.onSelectCoupon.value.code}'
+                  : 'Have a coupon code?',
+              style: TextStyle(fontSize: 18),
+            ),
+            TextButton(
+              onPressed: () {
+                Get.toNamed(RoutePath.coupon);
+              },
+              child: text18Normal('Apply'),
+            ),
+          ],
+        ),
+        cartCtrl.onSelectCoupon.obs,
       ),
     );
   }

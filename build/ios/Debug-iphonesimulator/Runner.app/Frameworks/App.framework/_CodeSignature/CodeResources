@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		IEf/i7DWor+ZOaXrwkPNRuzXdi4=
+		tzgIHHFbdEIqIvh53fIokc1ZFLM=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		2aATqIhURVA3LRndjEDB12ku2eQ=
+		B+xYmob4xE/HixrWwlh2q6454+Q=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -32,6 +32,10 @@
 		<data>
 		Uff4GqL3TN5s063URM3TxsHRZwA=
 		</data>
+		<key>flutter_assets/assets/icons/gift.png</key>
+		<data>
+		udExJ46IBwvkzIckJWxGezwEOCw=
+		</data>
 		<key>flutter_assets/assets/images/mocks/bg_bird.jpg</key>
 		<data>
 		1RP5wO5VyWiqb9B0+rbkt/FSxDI=
@@ -43,6 +47,10 @@
 		<key>flutter_assets/assets/json/category.json</key>
 		<data>
 		9XSLSibKJ4aAdL/a1GjkM0VZpDw=
+		</data>
+		<key>flutter_assets/assets/json/coupon.json</key>
+		<data>
+		unCnjIeGASudewg+ems5ojYkifo=
 		</data>
 		<key>flutter_assets/assets/json/flashsales.json</key>
 		<data>
@@ -62,7 +70,7 @@
 		</data>
 		<key>flutter_assets/assets/json/most_popular.json</key>
 		<data>
-		lAF9LgkBuFfQGBQM1lnp9IY3pDs=
+		AkdsPPOLnNlEfRKKuA7bmIgpXCE=
 		</data>
 		<key>flutter_assets/assets/json/product.json</key>
 		<data>
@@ -106,7 +114,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		HqUFSmQNy8vsEL+NHVDEZMDLyTM=
+		CMttjW2hGRkSsObuJKTDIxQ6lEM=
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -123,14 +131,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vW5R5OV/fqnVphZMLqu3VKSNf+5rtmhVhkDDta1U/6s=
+			PgoBrMu7A4vh7GyLb7nb3kIo/EXetLjoSIcJDCSF/j0=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hhOPzNbKmDWV2bL0uYEQGuBmVJTHPTTbzJ0KsIPmaAQ=
+			eQ2KBKxxpGOWdaA58LxouQXt0VZPmhu7LM74RoZ9j8Q=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -161,6 +169,13 @@
 			z2FUs46K6Gxx1S+niUvkvGkApdJzvrRwWEshL2k+xXY=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/icons/gift.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WaCe42sYERMv7ocQzWaCRlrf+9/AWujv/d0D9nKgJy0=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/images/mocks/bg_bird.jpg</key>
 		<dict>
 			<key>hash2</key>
@@ -180,6 +195,13 @@
 			<key>hash2</key>
 			<data>
 			caccAlOoZoSWQVGzLflZZCefdy45whLw46eVHBjNLKc=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/json/coupon.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			m5DdgivhkBAfH1ych3Q1xRvtvWQL9B4LTdS7nTbaHp4=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/json/flashsales.json</key>
@@ -214,7 +236,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cjB7oAwzO3TrWTyYjzvNsX+sHQ/Bx7R2oxyO9NMXHLg=
+			AwS+uXjioSP+FIQgMU4x68drf/JwQxix1JjzRP24XOU=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/json/product.json</key>
@@ -291,7 +313,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3367++tGuIqqT3O3HJgi5/c7NkPkC9+fYNdCaMhaChI=
+			0cfjnb54RFz8qFCN71fg2IpSPIMuRI0kqbFnqcIvttQ=
 			</data>
 		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:presentation/src/controller/home/home_binding.dart';
 import 'package:presentation/src/ui/page/cart/cart_page.dart';
+import 'package:presentation/src/ui/page/coupon/coupon_page.dart';
 import 'package:presentation/src/ui/page/home/home_page.dart';
 import 'package:presentation/src/ui/page/pdp/product_detail_page.dart';
 import 'package:presentation/src/ui/page/plp/plp_page.dart';
@@ -37,6 +38,10 @@ class RoutePages {
     GetPage(
       name: RoutePath.cart,
       page: () => CartPage(),
+    ),
+    GetPage(
+      name: RoutePath.coupon,
+      page: () => CouponPage(),
     ),
   ];
 }

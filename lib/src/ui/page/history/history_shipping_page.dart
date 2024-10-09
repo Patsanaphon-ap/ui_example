@@ -43,7 +43,7 @@ class HsitoryShippingPage extends StatelessWidget {
                         }
                         final price =
                             money.format(historyCtrl.order[index].totalPrice);
-                        final date = dateformat.format(
+                        final date = datetimeformat.format(
                           historyCtrl.order[index].orderAt ?? DateTime.now(),
                         );
                         return HistoryCardWidget(

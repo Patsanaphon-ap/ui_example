@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
+import 'package:presentation/src/data/models/coupon_model.dart';
 import 'package:presentation/src/data/models/product_detail_model.dart';
 
 class CartController extends GetxController {
   bool isloading = true;
   List<ProductModel> productCart = [];
   RxInt count = 0.obs;
+  Rx<CouponModel> onSelectCoupon = CouponModel().obs;
 
   double subtotal = 0.00;
   double delivery = 0.00;
@@ -58,10 +60,10 @@ class CartController extends GetxController {
     update();
   }
 
-  void increaseQty({required int index}) {
+  void onDcreaseQty({required int index}) {
     // If the product exists in the cart, update the quantity
     var updatedProduct = productCart[index];
-    updatedProduct.qty += 1;
+    updatedProduct.qty -= 1;
 
     // Replace the product in the cart with the updated version
     productCart[index] = updatedProduct;
@@ -69,10 +71,10 @@ class CartController extends GetxController {
     update();
   }
 
-  void decreaseQty({required int index}) {
+  void onIncreaseQty({required int index}) {
     // If the product exists in the cart, update the quantity
     var updatedProduct = productCart[index];
-    updatedProduct.qty -= 1;
+    updatedProduct.qty += 1;
 
     // Replace the product in the cart with the updated version
     productCart[index] = updatedProduct;
@@ -88,9 +90,27 @@ class CartController extends GetxController {
         productCart.fold(0.0, (sum, item) => sum + (item.price * item.qty));
     //  delivery cost
     delivery = 20.10;
-    //  discount of 15% on the subtotal
-    discount = subtotal * 0.15; // 15% discount
     // Calculate grand total
     grandtotal = subtotal + delivery - discount;
+  }
+
+  void onDiscount({required CouponModel coupon}) {
+    onSelectCoupon.value = coupon;
+    switch (coupon.discount.type) {
+      case 'p':
+        discount = subtotal * coupon.discount.value / 100;
+        break;
+      case 'd':
+        discount = coupon.discount.value.toDouble();
+        break;
+      case 's':
+        discount = delivery;
+        break;
+      default:
+        discount = 0.00;
+        break;
+    }
+    updateSummary();
+    update();
   }
 }

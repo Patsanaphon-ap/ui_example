@@ -59,6 +59,9 @@ class CouponCardWidget extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    width: 12,
+                  ),
                   ElevatedButton(
                     onPressed: onPressed,
                     style: ElevatedButton.styleFrom(
@@ -68,7 +71,7 @@ class CouponCardWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5.0),
                       ),
                     ),
-                    child: text18Bold("Apply"),
+                    child: text14Bold("Apply"),
                   ),
                 ],
               ),

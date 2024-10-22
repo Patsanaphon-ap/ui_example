@@ -1,14 +1,14 @@
-class CateogryModel {
+class CategoryModel {
   String type;
   String image;
 
-  CateogryModel({
+  CategoryModel({
     this.type = '',
     this.image = '',
   });
 
-  factory CateogryModel.fromJson(Map<String, dynamic> json) {
-    return CateogryModel(
+  factory CategoryModel.fromJson(Map<String, dynamic> json) {
+    return CategoryModel(
       type: json['type'] ?? 0,
       image: json['image'] ?? '',
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:presentation/src/config/route_path.dart';
 import 'package:presentation/src/controller/cart/cart_controller.dart';
+import 'package:presentation/src/controller/profile/profile_controller.dart';
 import 'package:presentation/src/data/models/product_detail_model.dart';
 import 'package:presentation/src/ui/page/cart/widget/cart_card_widget.dart';
 import 'package:presentation/src/ui/page/cart/widget/cart_empty.dart';
@@ -66,7 +67,7 @@ class CartPage extends StatelessWidget {
         return CartCardWidget(
           data: data,
           onDelete: () => cartCtrl.onDeleteProduct(productDelete: data),
-          onDecrease: () => cartCtrl.onDcreaseQty(index: index),
+          onDecrease: () => cartCtrl.onDecreaseQty(index: index),
           onIncrease: () => cartCtrl.onIncreaseQty(index: index),
         );
       },
@@ -91,11 +92,10 @@ class CartPage extends StatelessWidget {
         (coupon) => Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            text14Normal(
               cartCtrl.onSelectCoupon.value.code.isNotEmpty
                   ? 'Coupon Applied: ${cartCtrl.onSelectCoupon.value.code}'
                   : 'Have a coupon code?',
-              style: TextStyle(fontSize: 18),
             ),
             TextButton(
               onPressed: () {
@@ -111,6 +111,7 @@ class CartPage extends StatelessWidget {
   }
 
   Widget _addressWidget() {
+    final ProfileController profileCtrl = Get.find<ProfileController>();
     return Container(
       margin: EdgeInsets.symmetric(
         vertical: 12,
@@ -120,26 +121,24 @@ class CartPage extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
       ),
-      child: DropdownButtonHideUnderline(
-        child: DropdownButton(
-          value: '123 SV Colony',
-          items: [
-            DropdownMenuItem<String>(
-              value: '123 SV Colony',
-              child: text18Normal('123 SV Colony'),
+      child: Obx(() => DropdownButtonHideUnderline(
+            child: DropdownButton(
+              isExpanded: true,
+              value: cartCtrl.onSelectAddress.value,
+              items: profileCtrl.addressData.map((address) {
+                return DropdownMenuItem<String>(
+                  value: address,
+                  child: text14Normal(
+                    address,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                );
+              }).toList(),
+              onChanged: (value) => cartCtrl.onSelectAddress.value =
+                  value ?? profileCtrl.onSelectAddressProfile.value,
             ),
-            DropdownMenuItem<String>(
-              value: '456 Elm Street',
-              child: text18Normal('456 Elm Street'),
-            ),
-            DropdownMenuItem<String>(
-              value: '789 Oak Avenue',
-              child: text18Normal('789 Oak Avenue'),
-            ),
-          ],
-          onChanged: (value) => '123 SV Colony Good',
-        ),
-      ),
+          )),
     );
   }
 
@@ -157,15 +156,15 @@ class CartPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          text22Bold('Order Summary'),
+          text18Bold('Order Summary'),
           SizedBox(
             height: 8,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              text18Normal('Subtotal'),
-              text18Normal('\$ ${money.format(cartCtrl.subtotal)}'),
+              text14Normal('Subtotal'),
+              text14Normal('\$ ${money.format(cartCtrl.subtotal)}'),
             ],
           ),
           SizedBox(
@@ -174,8 +173,8 @@ class CartPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              text18Normal('Delivery'),
-              text18Normal('\$ ${money.format(cartCtrl.delivery)}'),
+              text14Normal('Delivery'),
+              text14Normal('\$ ${money.format(cartCtrl.delivery)}'),
             ],
           ),
           SizedBox(
@@ -184,7 +183,7 @@ class CartPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              text18Normal('Discount'),
+              text14Normal('Discount'),
               text18NormalColor('- \$ ${money.format(cartCtrl.discount)}'),
             ],
           ),
@@ -234,7 +233,9 @@ class CartPage extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(vertical: 12),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(RoutePath.payment);
+                      },
                       child: text18Bold("Proceed to checkout"),
                     ),
                   ),

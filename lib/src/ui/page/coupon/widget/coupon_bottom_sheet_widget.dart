@@ -24,6 +24,7 @@ class CouponBottomSheetWidget extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             CouponCardWidget(
@@ -58,6 +59,9 @@ class CouponBottomSheetWidget extends StatelessWidget {
             text12Normal(
               'This is a single use code for your use only. Get a new code each time you shop',
               textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 12,
             ),
           ],
         ),

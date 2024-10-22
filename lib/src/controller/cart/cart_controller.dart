@@ -1,12 +1,17 @@
 import 'package:get/get.dart';
+import 'package:presentation/src/controller/profile/profile_controller.dart';
 import 'package:presentation/src/data/models/coupon_model.dart';
 import 'package:presentation/src/data/models/product_detail_model.dart';
 
 class CartController extends GetxController {
+  final ProfileController profileCtrl = Get.find<ProfileController>();
+
   bool isloading = true;
   List<ProductModel> productCart = [];
   RxInt count = 0.obs;
+
   Rx<CouponModel> onSelectCoupon = CouponModel().obs;
+  RxString onSelectAddress = ''.obs;
 
   double subtotal = 0.00;
   double delivery = 0.00;
@@ -23,6 +28,7 @@ class CartController extends GetxController {
   Future<void> onLoadData({bool refresh = false}) async {
     isloading = true;
     update();
+    onSelectAddress.value = profileCtrl.onSelectAddressProfile.value;
 
     isloading = false;
     update();
@@ -60,7 +66,7 @@ class CartController extends GetxController {
     update();
   }
 
-  void onDcreaseQty({required int index}) {
+  void onDecreaseQty({required int index}) {
     // If the product exists in the cart, update the quantity
     var updatedProduct = productCart[index];
     updatedProduct.qty -= 1;
@@ -111,6 +117,12 @@ class CartController extends GetxController {
         break;
     }
     updateSummary();
+    update();
+  }
+
+  void onClearCart() {
+    count.value = 0;
+    productCart.clear();
     update();
   }
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:presentation/src/controller/profile/profile_controller.dart';
 import 'package:presentation/src/ui/widget/my_text.dart';
 
 class LocationWidget extends StatelessWidget {
-  const LocationWidget({super.key});
+  LocationWidget({super.key});
+  final ProfileController profileCtrl = Get.put(ProfileController());
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +28,8 @@ class LocationWidget extends StatelessWidget {
               const SizedBox(
                 width: 12,
               ),
-              text22Bold(
-                'Location',
+              text18Bold(
+                profileCtrl.onSelectAddressProfile.value,
                 maxLines: 1,
                 overflow: TextOverflow.clip,
               ),

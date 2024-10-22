@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
                   title: 'Hello, User',
                   subtitle: "Hey, Let's Order some thing!",
                 ),
-                const LocationWidget(),
+                LocationWidget(),
                 // const MenuWidget(),
                 const DiscountWidget(),
                 CategoryHomeWidget(),

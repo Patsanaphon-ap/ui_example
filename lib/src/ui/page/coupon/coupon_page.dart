@@ -59,38 +59,44 @@ class CouponPage extends StatelessWidget {
               ],
             );
           } else {
-            return ListView(
-              padding: EdgeInsets.symmetric(horizontal: 12),
-              physics: BouncingScrollPhysics(),
-              shrinkWrap: true,
-              children: [
-                ListView.separated(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (_, index) {
-                    return CouponCardWidget(
-                      data: couponCtrl.couponData[index],
-                      onPressed: () {
-                        Get.find<CartController>().onDiscount(
-                          coupon: couponCtrl.couponData[index],
-                        );
-                        Get.back();
-                      },
-                      onTapInfo: () {
-                        Get.bottomSheet(
-                          CouponBottomSheetWidget(
-                            data: couponCtrl.couponData[index],
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  itemCount: couponCtrl.couponData.length,
-                  separatorBuilder: (context, index) => SizedBox(
-                    height: 12,
+            return RefreshIndicator(
+              onRefresh: () async {
+                couponCtrl.onLoadData();
+              },
+              child: ListView(
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                physics: BouncingScrollPhysics(),
+                shrinkWrap: true,
+                children: [
+                  ListView.separated(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (_, index) {
+                      return CouponCardWidget(
+                        data: couponCtrl.couponData[index],
+                        onPressed: () {
+                          Get.find<CartController>().onDiscount(
+                            coupon: couponCtrl.couponData[index],
+                          );
+                          Get.back();
+                        },
+                        onTapInfo: () {
+                          Get.bottomSheet(
+                            isScrollControlled: true,
+                            CouponBottomSheetWidget(
+                              data: couponCtrl.couponData[index],
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    itemCount: couponCtrl.couponData.length,
+                    separatorBuilder: (context, index) => SizedBox(
+                      height: 12,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             );
           }
         },

@@ -32,6 +32,28 @@
         },
         "expiration_date": "2025-01-15",
         "terms": "Free shipping on orders over $30."
+      },
+      {
+        "coupon_id": 4,
+        "code": "FREESHIP",
+        "discount": {
+          "type": "s",
+          "title": "Free Shipping",
+          "value": null
+        },
+        "expiration_date": "2025-01-15",
+        "terms": "Free shipping on orders over $30."
+      },
+      {
+        "coupon_id": 5,
+        "code": "FREESHIP",
+        "discount": {
+          "type": "s",
+          "title": "Free Shipping",
+          "value": null
+        },
+        "expiration_date": "2025-01-15",
+        "terms": "Free shipping on orders over $30."
       }
     ]
   }

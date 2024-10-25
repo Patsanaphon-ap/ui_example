@@ -69,6 +69,20 @@ Widget text12Boldwhite(String data,
   );
 }
 
+Widget text12NormalBlack(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s12Normal.copyWith(
+        overflow: overflow, color: Colors.black, decoration: decoration),
+  );
+}
+
 Widget text14Small(String data,
     {int? maxLines,
     TextOverflow? overflow,
@@ -82,6 +96,20 @@ Widget text14Small(String data,
   );
 }
 
+Widget text14SmallBlack(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s14Small.copyWith(
+        overflow: overflow, color: Colors.black, decoration: decoration),
+  );
+}
+
 Widget text14Normal(String data,
     {int? maxLines,
     TextOverflow? overflow,
@@ -92,6 +120,20 @@ Widget text14Normal(String data,
     maxLines: maxLines,
     textAlign: textAlign,
     style: _s14Normal.copyWith(overflow: overflow, decoration: decoration),
+  );
+}
+
+Widget text14NormalBlack(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s14Normal.copyWith(
+        overflow: overflow, color: Colors.black, decoration: decoration),
   );
 }
 
@@ -119,6 +161,20 @@ Widget text14Bold(String data,
     maxLines: maxLines,
     textAlign: textAlign,
     style: _s14Bold.copyWith(overflow: overflow, decoration: decoration),
+  );
+}
+
+Widget text14BoldBlack(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s14Bold.copyWith(
+        overflow: overflow, color: Colors.black, decoration: decoration),
   );
 }
 
@@ -213,6 +269,20 @@ Widget text18Bold(String data,
     maxLines: maxLines,
     textAlign: textAlign,
     style: _s18Bold.copyWith(overflow: overflow, decoration: decoration),
+  );
+}
+
+Widget text18BoldBlack(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s18Bold.copyWith(
+        overflow: overflow, color: Colors.black, decoration: decoration),
   );
 }
 

@@ -54,18 +54,18 @@ class PLPCardWidget extends StatelessWidget {
                 ),
               ),
             ),
-            text14Small(
+            text14SmallBlack(
               type,
             ),
             Container(
-              child: text14Bold(
+              child: text14BoldBlack(
                 title,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
             Container(
-              child: text12Normal(
+              child: text12NormalBlack(
                 description,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
@@ -79,7 +79,7 @@ class PLPCardWidget extends StatelessWidget {
                   Icons.star_rate_rounded,
                   color: Colors.amber,
                 ),
-                text12Normal(
+                text12NormalBlack(
                   "${rating} | ${commentcount}",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

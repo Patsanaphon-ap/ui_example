@@ -63,7 +63,7 @@ class PLPListCardWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      text14Small(
+                      text14SmallBlack(
                         type,
                       ),
                       InkWell(
@@ -74,12 +74,12 @@ class PLPListCardWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  text14Bold(
+                  text14BoldBlack(
                     title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  text12Normal(
+                  text12NormalBlack(
                     description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -95,7 +95,7 @@ class PLPListCardWidget extends StatelessWidget {
                             Icons.star_rate_rounded,
                             color: Colors.amber,
                           ),
-                          text12Normal(
+                          text12NormalBlack(
                             "${rating} | ${commentcount}",
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,

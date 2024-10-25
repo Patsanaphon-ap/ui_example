@@ -45,12 +45,12 @@ class ThanksCardWidget extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          text18Bold(
+                          text18BoldBlack(
                             data.title,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          text14Normal(
+                          text14SmallBlack(
                             data.brand,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
@@ -65,7 +65,7 @@ class ThanksCardWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                text18Bold(
+                text18BoldBlack(
                   '\$ ${money.format((data.price * data.qty))}',
                   maxLines: 1,
                 ),

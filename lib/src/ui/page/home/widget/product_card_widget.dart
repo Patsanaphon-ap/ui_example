@@ -30,9 +30,11 @@ class ProductCardWidget extends StatelessWidget {
         width: (Get.height * 0.15) + 18,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).primaryColorLight,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Colors.white),
+          border: Border.all(
+            color: Theme.of(context).primaryColorLight,
+          ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,12 +56,12 @@ class ProductCardWidget extends StatelessWidget {
               ),
             ),
             // Product Type Text
-            text14Small(
+            text14SmallBlack(
               type,
             ),
             // Product Title with Limited Height and Ellipsis
             Expanded(
-              child: text14Bold(
+              child: text14BoldBlack(
                 title,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
@@ -74,7 +76,7 @@ class ProductCardWidget extends StatelessWidget {
                   Icons.star_rate_rounded,
                   color: Colors.amber,
                 ),
-                text12Normal(
+                text12NormalBlack(
                   "${rating} | ${commentcount}",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

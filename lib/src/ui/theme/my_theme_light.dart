@@ -6,8 +6,9 @@ ThemeData get lightTheme => ThemeData(
       useMaterial3: true,
       fontFamily: 'Roboto',
       primaryColor: Colors.blueAccent,
-      primaryColorLight: Colors.blueGrey.shade50,
+      primaryColorLight: Colors.white,
       primaryColorDark: Colors.black,
+      iconTheme: IconThemeData(color: Colors.black),
       badgeTheme: BadgeThemeData(
         textColor: Colors.white,
         textStyle: TextStyle(color: Colors.white),

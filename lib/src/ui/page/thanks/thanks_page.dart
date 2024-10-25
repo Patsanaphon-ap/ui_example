@@ -58,10 +58,10 @@ class ThankePage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          text18Bold(
+          text18BoldBlack(
             'Your Order is being Shipped At',
           ),
-          text14Normal(
+          text14NormalBlack(
             payCtrl.addressShipping,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
@@ -110,12 +110,12 @@ class ThankePage extends StatelessWidget {
         bottom: MediaQuery.of(context).padding.bottom + 12,
         top: 8,
       ),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(24.0),
           topRight: Radius.circular(24.0),
         ),
-        color: Colors.white,
+        color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -55,6 +55,7 @@ class PaymentController extends GetxController {
 
   void setPaymentMethod({required PaymentState method}) {
     onPaymentMethod.value = method;
+    update(['method']);
   }
 
   void onPayNow() async {

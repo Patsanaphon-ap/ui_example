@@ -59,7 +59,7 @@ class PLPPage extends StatelessWidget {
                               Icons.list_outlined,
                               color: (!plpCtrl.viewtype.value)
                                   ? Theme.of(context).primaryColor
-                                  : Colors.black,
+                                  : Theme.of(context).iconTheme.color,
                             ),
                           ),
                           IconButton(
@@ -68,7 +68,7 @@ class PLPPage extends StatelessWidget {
                               Icons.grid_view_outlined,
                               color: (plpCtrl.viewtype.value)
                                   ? Theme.of(context).primaryColor
-                                  : Colors.black,
+                                  : Theme.of(context).iconTheme.color,
                             ),
                           ),
                         ],

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
+  bool isloading = true;
   RxString onSelectAddressProfile = ''.obs;
   List<String> addressData = [
     '123 SV Colony',
@@ -10,8 +11,16 @@ class ProfileController extends GetxController {
 
   @override
   void onInit() {
+    onLoadLocation();
     onloadData();
     super.onInit();
+  }
+
+  onLoadLocation() {
+    isloading = true;
+    update();
+    isloading = false;
+    update();
   }
 
   onloadData() {

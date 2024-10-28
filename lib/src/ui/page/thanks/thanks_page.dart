@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:presentation/src/config/route_path.dart';
 import 'package:presentation/src/controller/cart/cart_controller.dart';
 import 'package:presentation/src/controller/payment/payment_controller.dart';
 import 'package:presentation/src/ui/page/thanks/widget/thanks_card_widget.dart';
@@ -15,6 +14,7 @@ class ThankePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyPage(
+      popscope: false,
       useScroll: false,
       appbarColor: Colors.white,
       bottomNavigationBar: _bottomNavigationBar(context),
@@ -22,7 +22,7 @@ class ThankePage extends StatelessWidget {
         leading: InkWell(
           onTap: () {
             cartCtrl.onClearCart();
-            Get.offNamedUntil(RoutePath.bottomnav, (route) => false);
+            Get.back();
           },
           child: Icon(
             Icons.arrow_back_ios_new_outlined,
@@ -130,7 +130,7 @@ class ThankePage extends StatelessWidget {
                   ),
                   onPressed: () {
                     cartCtrl.onClearCart();
-                    Get.offAllNamed(RoutePath.bottomnav);
+                    Get.back();
                   },
                   child: text18Bold("Confirm"),
                 ),

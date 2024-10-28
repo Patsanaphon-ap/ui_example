@@ -65,7 +65,8 @@ class PaymentController extends GetxController {
     await Future.delayed(const Duration(seconds: 2));
 
     if (onPaymentMethod.value != PaymentState.promotPay) {
-      Get.offAllNamed(RoutePath.thanksyou);
+      Get.offNamedUntil(RoutePath.thanksyou,
+          (route) => route.settings.name == RoutePath.bottomnav);
     }
     await Future.delayed(const Duration(seconds: 1));
     isloading = false;
@@ -75,7 +76,8 @@ class PaymentController extends GetxController {
   void promptPayConfirm() {
     isloading = true;
     update();
-    Get.offAllNamed(RoutePath.thanksyou);
+    Get.offNamedUntil(RoutePath.thanksyou,
+        (route) => route.settings.name == RoutePath.bottomnav);
     isloading = false;
     update();
   }

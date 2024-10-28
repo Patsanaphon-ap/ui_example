@@ -9,6 +9,7 @@ import 'package:presentation/src/ui/page/category/category_page.dart';
 import 'package:presentation/src/ui/page/coupon/coupon_page.dart';
 import 'package:presentation/src/ui/page/history/history_page.dart';
 import 'package:presentation/src/ui/page/home/home_page.dart';
+import 'package:presentation/src/ui/page/location/location_page.dart';
 import 'package:presentation/src/ui/page/option/option_page.dart';
 import 'package:presentation/src/ui/page/pay/pay_page.dart';
 import 'package:presentation/src/ui/page/payment/payment_page.dart';
@@ -57,6 +58,10 @@ class RoutePages {
     GetPage(
       name: RoutePath.productlist,
       page: () => PLPPage(),
+    ),
+    GetPage(
+      name: RoutePath.location,
+      page: () => LocationPage(),
     ),
     GetPage(
       name: RoutePath.cart,

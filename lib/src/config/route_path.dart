@@ -15,4 +15,5 @@ class RoutePath {
   static const payment = '/payment';
   static const pay = '/pay';
   static const thanksyou = '/thanksyou';
+  static const location = '/location';
 }

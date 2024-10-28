@@ -30,7 +30,7 @@ class CouponCardWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  text18Bold(data.code),
+                  text18BoldBlack(data.code),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
@@ -41,7 +41,7 @@ class CouponCardWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              text24Bold(data.discount.title),
+              text24BoldBlack(data.discount.title),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -49,7 +49,7 @@ class CouponCardWidget extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        text14Normal(
+                        text14NormalBlack(
                           data.terms,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,

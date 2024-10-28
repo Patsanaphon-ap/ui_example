@@ -454,6 +454,20 @@ Widget text24Bold(String data,
   );
 }
 
+Widget text24BoldBlack(String data,
+    {int? maxLines,
+    TextOverflow? overflow,
+    TextDecoration? decoration,
+    TextAlign? textAlign}) {
+  return _myText(
+    data,
+    maxLines: maxLines,
+    textAlign: textAlign,
+    style: _s24Bold.copyWith(
+        overflow: overflow, color: Colors.black, decoration: decoration),
+  );
+}
+
 Widget text32Normal(String data,
     {int? maxLines,
     TextOverflow? overflow,

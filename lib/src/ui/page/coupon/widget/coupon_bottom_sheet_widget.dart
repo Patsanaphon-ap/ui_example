@@ -40,7 +40,7 @@ class CouponBottomSheetWidget extends StatelessWidget {
               height: 12,
             ),
             Center(
-              child: text12Normal(
+              child: text12NormalBlack(
                 'Scan this QR code to get discount during checkout!',
                 textAlign: TextAlign.center,
               ),
@@ -55,8 +55,12 @@ class CouponBottomSheetWidget extends StatelessWidget {
                 size: 200.0,
               ),
             ),
-            Center(child: Icon(Icons.info_outline)),
-            text12Normal(
+            Center(
+                child: Icon(
+              Icons.info_outline,
+              color: Colors.grey,
+            )),
+            text12NormalBlack(
               'This is a single use code for your use only. Get a new code each time you shop',
               textAlign: TextAlign.center,
             ),

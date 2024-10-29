@@ -38,7 +38,7 @@ class ClockController extends GetxController {
     const duration = Duration(seconds: 1);
     remainSeconds = seconds;
     _timer = Timer.periodic(duration, (Timer timer) {
-      if (remainSeconds == 0) {
+      if (remainSeconds <= 0) {
         hr.value = '00';
         min.value = '00';
         sec.value = '00';

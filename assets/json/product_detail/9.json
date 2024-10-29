@@ -1,0 +1,71 @@
+{
+    "product": {
+        "id": 9,
+        "title": "Classic Roast instant coffee",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "price": 5,
+        "discountPercentage": 15.46,
+        "rating": 4.09,
+        "comment": 420,
+        "stock": 36,
+        "brand": "Canon",
+        "category": "Camera",
+        "thumbnail": "https://images.pexels.com/photos/26558335/pexels-photo-26558335/free-photo-of-cup-and-jar-of-antigua-instant-coffee.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+        ],
+        "specifications": {
+            "material": "Magnesium alloy",
+            "color": "Black or Silver",
+            "weight": "381 g",
+            "dimensions": {
+              "height": "82.8 mm",
+              "width": "118.4 mm",
+              "depth": "40.8 mm"
+            },
+            "features": [
+              "APS-C X-Trans CMOS II Sensor",
+              "16.3 Megapixels",
+              "3-inch tilting LCD screen",
+              "Wi-Fi connectivity",
+              "Full HD video recording"
+            ]
+        },
+        "reviews": [
+          {
+            "username": "john_doe",
+            "rating": 5,
+            "comment": "Great headphones! The sound quality is amazing and the noise cancellation works perfectly.",
+            "date": "2024-09-01"
+          },
+          {
+            "username": "jane_smith",
+            "rating": 4,
+            "comment": "Very comfortable to wear for long periods, but the battery could be better.",
+            "date": "2024-09-05"
+          }
+        ],
+        "availability": "In Stock",
+        "deliveryOptions": {
+          "standard": "5-7 business days",
+          "express": "2-3 business days",
+          "same_day": "Available in selected cities"
+        },
+        "warranty": "1-year manufacturer warranty",
+        "returnPolicy": "30-day return policy",
+        "relatedProducts": [
+          {
+            "id": 2,
+            "title": "Wireless Earbuds",
+            "price": 49.99,
+            "thumbnail": "https://example.com/images/product2-thumbnail.jpg"
+          },
+          {
+            "id": 3,
+            "title": "Noise Cancelling Over-Ear Headphones",
+            "price": 129.99,
+            "thumbnail": "https://example.com/images/product3-thumbnail.jpg"
+          }
+        ]
+    }
+}
